@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>登陆</title>
+		<link rel="shortcut icon" href="html/图标.ico">
+	</head>
+	<body>
+		<body onselectstart="return false">
+        <p align="center"><label class="label_input">用户名</label><input type="text" id="u" class="text_field"/></p>
+        <p align="center"><label class="label_input">密　码</label><input type="text" id="p" class="text_field"/></p>
+        <p align="center"><button type="button" onclick="myFunction()">登陆</button></p>
+        <script src="./user.txt"></script>
+        <script type="text/javascript">
+			function myFunction()
+			{
+                 var username = window.atob(user["username"]);
+                 var password = window.atob(user["password"]);
+				 var use = document.getElementById("u").value;
+				 var pwd = document.getElementById("p").value;
+				 if(use==username&&pwd==password)
+				 {
+					window.localStorage.setItem("user",username);
+					window.alert("Success");
+				    location.href="./index1.html"
+				 }else
+				 {
+					window.alert("failed");
+				 }
+			}
+		</script>
+	</body>
+</html>

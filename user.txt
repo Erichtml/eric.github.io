@@ -1,0 +1,1 @@
+var user = {"username": "RXJpYw==", "password": "RXJpYzQ5NDQ2NjQ=", "vip": "dHJ1ZQ=="};

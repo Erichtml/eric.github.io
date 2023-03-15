@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>工具箱</title>
+    <link rel="shortcut icon" href="html/图标.ico">
+</head>
+<SCRIPT language=JavaScript>
+    function password() {
+    var testV = 1;
+    var pass1 = prompt('请输入密钥:','');
+    while (testV < 3) {
+    if (!pass1)
+    history.go(-1);
+    if (pass1 == "Zol8250092") {
+    var user = window.localStorage.getItem("user");
+    alert("Hello,"+user);
+    break;
+    }
+    testV+=-1;
+    var pass1 = prompt('密码错误!请重新输入:');
+    }
+    if (pass1!="password" & testV ==3)
+    history.go(-1);
+    return " ";
+    }
+    document.write(password());
+    </SCRIPT>
+    <script>
+        (function () {
+            var how=0;
+            var a_idx = 0;
+            
+            window.onclick = function (event) {
+                var a = new Array("❤富强❤", "❤民主❤", "❤文明❤", "❤和谐❤", "❤自由❤", "❤平等❤", "❤公正❤", "❤法治❤", "❤爱国❤",
+                    "❤敬业❤", "❤诚信❤", "❤友善❤", "赞助😊");
+ 
+                var heart = document.createElement("b"); //创建b元素
+                heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
+ 
+                document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+                a_idx = (a_idx + 1) % a.length;
+                heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
+ 
+                var f = 16, // 字体大小
+                    x = event.clientX - f / 2, // 横坐标
+                    y = event.clientY - f, // 纵坐标
+                    c = randomColor(), // 随机颜色
+                    a = 1, // 透明度
+                    s = 1.2; // 放大缩小
+ 
+                var timer = setInterval(function () { //添加定时器
+                    if (a <= 0) {
+                        document.body.removeChild(heart);
+                        clearInterval(timer);
+                        
+                how+=1;
+                if (how==103){
+                    how=0;
+                    setTimeout("window.open('zanzhu.html', '_blank'); ",300);
+                }
+                    } else {
+                        heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                            c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                            s + ");";
+ 
+                        y--;
+                        a -= 0.016;
+                        s += 0.002;
+                    }
+                }, 15)
+ 
+            }
+            // 随机颜色
+            function randomColor() {
+ 
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+                .random() * 255)) + ")";
+            }
+        }());
+    </script>
+ 
+</html>
+<!DOCTYPE netscape-bookmark-file-1>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+    a:link {text-decoration: none; color:rgb(119, 255, 0);}
+    a:visited {color:rgb(119, 255, 0);}
+    a:hover {color:rgb(255, 0, 0);}
+    a:active {color:rgb(198, 29, 29);}
+</style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            .menu
+            {
+                
+                width: 793px;
+                height: 50px;
+                margin: 50px auto 0;
+                font-size: 0;
+                list-style: none;
+                padding: 0;
+            }
+            
+            .menu li
+            {
+                display:inline-block;
+                width:98px;
+                height:48px;
+                border-radius:5px;
+                border:1.32px solid rgb(220, 132, 255);
+                font-size:15px;
+                margin-right:-0.4px;
+                text-align:center;
+                line-height:48px;
+            }
+            .menu a
+            {
+                font-family: "Microsoft YaHei UI";
+                color:rgb(14, 17, 203);
+                text-decoration: none;
+            }
+            .menu li
+            {
+                background-color: rgb(219, 9, 205);
+            }
+    
+            .menu li:hover
+            {
+                background-color: rgb(38, 4, 117);
+            }
+    
+            .menu a:hover
+            {
+                color:rgb(253, 0, 0);
+            }
+    
+        </style>
+        
+    <body>
+        <body onselectstart="return false">
+        <ul class="menu">
+            <li><a href="index1.html">刷新首页</a></li>
+            <li><a href="钟表/钟表.zip">离线钟表</a></li>
+            <li><a href="speek.html" target="_blank">聊天服务</a></li>
+            <li><a href="time.html" target="_blank">在线钟表</a></li>
+            <li><a href="guanyu.html" target="-blank">关于网页</a></li>
+            <li><a href="zanzhu.html" target="_blank">赞助作者</a></li>
+            <li><a href="download.html" target="_blank">软件下载</a></li>
+            <li><a href="index.html">退出登录</a></li>
+        </ul>
+        <h1 align="center"><font color="DarkOrange">工具箱</font></h1>
+        <body style='text-align:center;'>
+          <textarea style='font-size:20px;width:1100px;height:300px;vertical-align:middle;outline-style:none;background:rgb(247, 252, 255);border-radius:5px;' id='txtCode'></textarea><br/>
+          <br>
+          <input type='button' value='运行' id='btnRun' style='font-weight:bold;width:80px;height:40px;font-size:20px;color:rgb(255, 0, 0);'/>
+          <script>
+            document.getElementById('btnRun').onclick = function(){
+              var runHtml = document.getElementById('txtCode').value;
+              if(runHtml){
+                var win = window.open('', '运行窗口');
+                win.document.open();
+                win.document.write(runHtml);
+                win.document.close();
+              }
+              else{
+                alert('请输入!');
+              }
+            }
+          </script>
+        </body>
+        <br><br>
+        <font size="1" color="blue"><div align="left"><a>　　</a><a href="https://icp.gov.moe/?keyword=20232017" target="_blank">萌ICP备20232017号</a><a>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</a><a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=738301754&website=www.oicqzone.com">By ©Eric(QQ:738301754)</a></div></font>
+        </body>
+            <meta charset="utf-8">
+            <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+            <style>
+            html, body { background: #e9f6fe; margin: 0; padding:0;}
+            canvas { width: 100%; height: 100%; position: absolute;z-index:0;}
+            </style>
+            <body>
+            <span class="js-cursor-container"></span>
+            <script>
+                (function fairyDustCursor() {
+         
+                    var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
+                    var width = window.innerWidth;
+                    var height = window.innerHeight;
+                    var cursor = { x: width / 2, y: width / 2 };
+                    var particles = [];
+         
+                    function init() {
+                        bindEvents();
+                        loop();
+                    }
+         
+                    // Bind events that are needed
+                    function bindEvents() {
+                        document.addEventListener('mousemove', onMouseMove);
+                        window.addEventListener('resize', onWindowResize);
+                    }
+         
+                    function onWindowResize(e) {
+                        width = window.innerWidth;
+                        height = window.innerHeight;
+                    }
+         
+                    function onMouseMove(e) {
+                        cursor.x = e.clientX;
+                        cursor.y = e.clientY;
+         
+                        addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+                    }
+         
+                    function addParticle(x, y, color) {
+                        var particle = new Particle();
+                        particle.init(x, y, color);
+                        particles.push(particle);
+                    }
+         
+                    function updateParticles() {
+         
+                        // Updated
+                        for (var i = 0; i < particles.length; i++) {
+                            particles[i].update();
+                        }
+         
+                        // Remove dead particles
+                        for (var i = particles.length - 1; i >= 0; i--) {
+                            if (particles[i].lifeSpan < 0) {
+                                particles[i].die();
+                                particles.splice(i, 1);
+                            }
+                        }
+         
+                    }
+         
+                    function loop() {
+                        requestAnimationFrame(loop);
+                        updateParticles();
+                    }
+                    function Particle() {
+         
+                        this.character = "*";
+                        this.lifeSpan = 120; //ms
+                        this.initialStyles = {
+                            "position": "fixed",
+                            "display": "inline-block",
+                            "top": "0px",
+                            "left": "0px",
+                            "pointerEvents": "none",
+                            "touch-action": "none",
+                            "fontSize": "25px",
+                            "will-change": "transform"
+                        };
+         
+                        // Init, and set properties
+                        this.init = function (x, y, color) {
+         
+                            this.velocity = {
+                                x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+                                y: 1
+                            };
+         
+                            this.position = { x: x + 10, y: y + 10 };
+                            this.initialStyles.color = color;
+         
+                            this.element = document.createElement('span');
+                            this.element.innerHTML = this.character;
+                            applyProperties(this.element, this.initialStyles);
+                            this.update();
+         
+                            document.querySelector('.js-cursor-container').appendChild(this.element);
+                        };
+         
+                        this.update = function () {
+                            this.position.x += this.velocity.x;
+                            this.position.y += this.velocity.y;
+                            this.lifeSpan--;
+         
+                            this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + (this.lifeSpan / 120) + ")";
+                        }
+         
+                        this.die = function () {
+                            this.element.parentNode.removeChild(this.element);
+                        }
+         
+                    }
+         
+                    /**
+                     * Utils
+                     */
+         
+                    // Applies css `properties` to an element.
+                    function applyProperties(target, properties) {
+                        for (var key in properties) {
+                            target.style[key] = properties[key];
+                        }
+                    }
+         
+                    if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
+                })();    
+            </script>
+            </body></html>
+    </head>
+    </html>
+</body>
+</body>
+</html>

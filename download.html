@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>登陆测试</title>
+        <link rel="shortcut icon" href="html/图标.ico">
+	</head>
+	<body>
+        <body onselectstart="return false"></body>
+        <p align="center"><label class="label_input">用户名</label><input type="text" id="u" class="text_field"/></p>
+        <p align="center"><label class="label_input">密码</label><input type="text" id="p" class="text_field"/></p>
+        <p align="center"><button type="button" onclick="myFunction()">登陆</button></p>
+        <script src="./user.txt"></script>
+        <script type="text/javascript">
+			function myFunction()
+			{
+                 var username = window.atob(user["username"]);
+                 var password = window.atob(user["password"]);
+                 var vip = window.atob(user["vip"]);
+				 var use = document.getElementById("u").value;
+				 var pwd = document.getElementById("p").value;
+				 if(use==username&&pwd==password&&vip=="true")
+				 {
+					window.alert("True");
+                    window.document.write("Dreamweaver:</br>https://www.aliyundrive.com/s/LhF83hVT4uu 提取码：7v5g</br>")
+				 }else if(use==username&&pwd==password&&vip=="false")
+				 {
+					window.alert("False,请购买vip");
+                    window.open('./zanzhu.html',"_blank");
+				 }
+                 else{
+                    window.alert("False,请注册");
+                    window.open('./Register.html',"_blank");
+                 }
+			}
+		</script>
+	</body>
+</html>
